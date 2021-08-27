@@ -5,11 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:G1000.PFD"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1024" ResizeMode="NoResize">
-    <Window.Background>
-        <ImageBrush Stretch="Uniform" ImageSource="Images/Background/PFD.png"/>
-    </Window.Background>
+        Title="G1000_PFD" ResizeMode="NoResize"  Loaded="Window_Loaded" Background="{x:Null}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+
     <Grid>
-        
+        <Canvas x:Name="MainCanvas" Height="768" Width="1024" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Window>
