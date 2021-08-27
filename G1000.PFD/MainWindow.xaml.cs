@@ -57,50 +57,53 @@ namespace G1000.PFD
             Canvas.SetTop(splashScreen, 0);
             splashScreen.Visibility = Visibility.Visible;
             #endregion
-            
-            //splashScreen.Visibility = Visibility.Hidden;
-            MSFSapi.Init(GetHWinSource());
 
-            #region Setup Layout
-            attitude_pr.Width = 3072;
-            attitude_pr.Height = 2304;
-            MainCanvas.Children.Add(attitude_pr);
-            double left = (-1024);
-            Canvas.SetLeft(attitude_pr, left);
-
-            double top = (-800);
-            Canvas.SetTop(attitude_pr, top);
-            attitude_pr.Visibility = Visibility.Visible;
-            #endregion
-
-            #region Setup COM
-            com.Width = 1024;
-            com.Height = 200;
-            MainCanvas.Children.Add(com);
-            Canvas.SetLeft(com, 0);
-            Canvas.SetTop(com, 0);
-            com.Visibility = Visibility.Visible;
-            #endregion
-
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            //Start Timer to show splashscreen and after a specified amonut of time
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 3000);
             timer.Tick += new EventHandler(OnTick);
             timer.Start();
+
+            MSFSapi.Init(GetHWinSource());           
         }
 
         private void OnTick(object sender, EventArgs e)
         {
+            /*
             #region Attitude
             attitude_pr.RenderTransformOrigin = new Point(0.5, 0.5);
             RotateTransform rotateTransform = new RotateTransform(SimVars.ID.attitude_roll);
             attitude_pr.RenderTransform = rotateTransform;
 
             Canvas.SetTop(attitude_pr, (-860 - (SimVars.ID.attitude_pitch*6.5)));
-
+         
             //MoveTo(attitude_pr, SimVars.ID.attitude_pitch);
 
 
 
-            #endregion
+            #endregion   */
+
+            /*#region Setup Layout
+           attitude_pr.Width = 3072;
+           attitude_pr.Height = 2304;
+           MainCanvas.Children.Add(attitude_pr);
+           double left = (-1024);
+           Canvas.SetLeft(attitude_pr, left);
+
+           double top = (-800);
+           Canvas.SetTop(attitude_pr, top);
+           attitude_pr.Visibility = Visibility.Visible;
+           #endregion
+
+           #region Setup COM
+           com.Width = 1024;
+           com.Height = 200;
+           MainCanvas.Children.Add(com);
+           Canvas.SetLeft(com, 0);
+           Canvas.SetTop(com, 0);
+           com.Visibility = Visibility.Visible;
+           #endregion
+
+           */
         }
 
         protected HwndSource GetHWinSource()
