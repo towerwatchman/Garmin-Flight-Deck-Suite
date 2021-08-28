@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D21CC73A-B4C3-4A95-A14B-F7BAB54FE88B}</ProjectGuid>
+    <ProjectGuid>{74666AAE-731D-4F90-92A5-9DAE19951408}</ProjectGuid>
     <OutputType>library</OutputType>
-    <RootNamespace>Attitude_Pitch_Roll</RootNamespace>
-    <AssemblyName>Attitude_Pitch_Roll</AssemblyName>
+    <RootNamespace>NAV</RootNamespace>
+    <AssemblyName>NAV</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -32,30 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SharpVectors.Converters.Wpf, Version=1.7.6.0, Culture=neutral, PublicKeyToken=b532964b8548be77, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpVectors.1.7.6\lib\net48\SharpVectors.Converters.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpVectors.Core, Version=1.7.6.0, Culture=neutral, PublicKeyToken=7407205e337c98ef, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpVectors.1.7.6\lib\net48\SharpVectors.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpVectors.Css, Version=1.7.6.0, Culture=neutral, PublicKeyToken=7a46e3f532fdb787, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpVectors.1.7.6\lib\net48\SharpVectors.Css.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpVectors.Dom, Version=1.7.6.0, Culture=neutral, PublicKeyToken=517340b6277b1a7a, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpVectors.1.7.6\lib\net48\SharpVectors.Dom.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpVectors.Model, Version=1.7.6.0, Culture=neutral, PublicKeyToken=2236cfc76b505845, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpVectors.1.7.6\lib\net48\SharpVectors.Model.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpVectors.Rendering.Gdi, Version=1.7.6.0, Culture=neutral, PublicKeyToken=03902092284347e3, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpVectors.1.7.6\lib\net48\SharpVectors.Rendering.Gdi.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpVectors.Rendering.Wpf, Version=1.7.6.0, Culture=neutral, PublicKeyToken=d0902381100df30e, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpVectors.1.7.6\lib\net48\SharpVectors.Rendering.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpVectors.Runtime.Wpf, Version=1.7.6.0, Culture=neutral, PublicKeyToken=d16e717f0a981fb9, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpVectors.1.7.6\lib\net48\SharpVectors.Runtime.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -99,23 +75,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <Resource Include="fonts\RobotoMono-Bold.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimVars\SimVars.csproj">
-      <Project>{cd7234b5-b50d-421d-af1c-cf4271bd9b52}</Project>
-      <Name>SimVars</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Attitude_PR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Attitude_PR_CTR.png" />
+    <Resource Include="COM.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

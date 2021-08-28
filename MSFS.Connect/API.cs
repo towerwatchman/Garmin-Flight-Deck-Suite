@@ -37,12 +37,13 @@ namespace MSFS.Connect
         public double airspeedIndicated;
         public double attitude_pitch;
         public double attitude_roll;
+        public double airspeedTrue;
     };
 
     public class API
     {
         private DispatcherTimer m_oTimer = new DispatcherTimer();
-        private bool bConnected = false;
+        //private bool bConnected = false;
         private bool bOddTick = false;
 
         public DEFINITION eDef = DEFINITION.Dummy;
@@ -93,6 +94,7 @@ namespace MSFS.Connect
                 simconnect.AddToDataDefinition(DEFINITION.Dummy, "Airspeed Indicated", "knot", SIMCONNECT_DATATYPE.FLOAT64, 0, SimConnect.SIMCONNECT_UNUSED);
                 simconnect.AddToDataDefinition(DEFINITION.Dummy, "Plane Pitch Degrees", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0, SimConnect.SIMCONNECT_UNUSED);
                 simconnect.AddToDataDefinition(DEFINITION.Dummy, "Plane Bank Degrees", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0, SimConnect.SIMCONNECT_UNUSED);
+                simconnect.AddToDataDefinition(DEFINITION.Dummy, "Airspeed True", "knot", SIMCONNECT_DATATYPE.FLOAT64, 0, SimConnect.SIMCONNECT_UNUSED);
 
                 simconnect.RegisterDataDefineStruct<Struct1>(DEFINITION.Dummy);
 
@@ -110,7 +112,7 @@ namespace MSFS.Connect
             Console.WriteLine("SimConnect_OnRecvOpen");
             Console.WriteLine("Connected to KH");
 
-            bConnected = true;
+            //bConnected = true;
 
             // Register pending requests
             /*foreach (string oSimvarRequest in lSimvarRequests)
@@ -144,7 +146,7 @@ namespace MSFS.Connect
 
         private void SimConnect_OnRecvSimobjectDataBytype(SimConnect sender, SIMCONNECT_RECV_SIMOBJECT_DATA_BYTYPE data)
         {
-            Console.WriteLine("SimConnect_OnRecvSimobjectDataBytype");
+            //Console.WriteLine("SimConnect_OnRecvSimobjectDataBytype");
 
             uint iRequest = data.dwRequestID;
             uint iObject = data.dwObjectID;
@@ -162,14 +164,15 @@ namespace MSFS.Connect
                     SimVars.ID.airspeedIndicated = s1.airspeedIndicated;
                     SimVars.ID.attitude_roll = s1.attitude_roll;
                     SimVars.ID.attitude_pitch = s1.attitude_pitch;
+                    SimVars.ID.airspeedTrue = s1.airspeedTrue;
 
-                    Console.WriteLine("title: " + s1.title);
+                    /*Console.WriteLine("title: " + s1.title);
                     Console.WriteLine("Lat:   " + s1.latitude);
                     Console.WriteLine("Lon:   " + s1.longitude);
                     Console.WriteLine("Alt:   " + s1.altitude);
                     Console.WriteLine("Speed:   " + s1.airspeedIndicated);
                     Console.WriteLine("Roll:   " + s1.attitude_roll);
-                    Console.WriteLine("Pitch:   " + s1.attitude_pitch);
+                    Console.WriteLine("Pitch:   " + s1.attitude_pitch);*/
                     //Console.Clear();
                     break;
 
@@ -224,11 +227,11 @@ namespace MSFS.Connect
         }
         private void OnTick(object sender, EventArgs e)
         {
-            Console.WriteLine("OnTick");
+            //Console.WriteLine("OnTick");
 
             bOddTick = !bOddTick;
             simconnect.RequestDataOnSimObjectType(DATA_REQUESTS.REQUEST_1, DEFINITION.Dummy, 0, SIMCONNECT_SIMOBJECT_TYPE.USER);
-            Console.WriteLine("Request sent...");
+            //Console.WriteLine("Request sent...");
 
             /*foreach (SimvarRequest oSimvarRequest in lSimvarRequests)
             {

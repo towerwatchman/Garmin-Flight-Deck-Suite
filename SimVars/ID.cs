@@ -15,5 +15,6 @@ namespace SimVars
         static public double airspeedIndicated{get; set;}
         static public double attitude_roll{get; set;}
         static public double attitude_pitch{get; set;}
+        static public double airspeedTrue { get; set; }
     }
 }

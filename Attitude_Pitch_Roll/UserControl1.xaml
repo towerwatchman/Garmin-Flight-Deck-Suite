@@ -6,9 +6,9 @@
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              xmlns:local="clr-namespace:Attitude_Pitch_Roll"
              mc:Ignorable="d" 
-             d:DesignHeight="2304" d:DesignWidth="3072">
+             d:DesignHeight="768" d:DesignWidth="1024">
     <Grid>
-        <Image x:Name="Attitude_Base" Source="Attitude_PR.png"/>
+        <Image x:Name="Attitude_Base" Source="Attitude_PR.png" Width="3072" Height="2304" Stretch="UniformToFill" RenderTransformOrigin="0.315,0.372" Margin="-1024,-512,-1024,-1024"/>
 
     </Grid>
 </UserControl>

@@ -12,17 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
-namespace NAV
+namespace RollScale
 {
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
     public partial class UserControl1 : UserControl
     {
+        private DispatcherTimer timer = new DispatcherTimer();
         public UserControl1()
         {
             InitializeComponent();
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            timer.Tick += new EventHandler(OnTick);
+            timer.Start();
         }
+
+        private void OnTick(object sender, EventArgs e)
+        {
+            RollScale.RenderTransformOrigin = new Point(0.5, 0.5);
+            RotateTransform rotateTransform = new RotateTransform(SimVars.ID.attitude_roll);
+            RollScale.RenderTransform = rotateTransform;
+        }
+
     }
+
 }

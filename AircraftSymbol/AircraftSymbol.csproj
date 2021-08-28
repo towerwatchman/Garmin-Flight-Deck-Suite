@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{74666AAE-731D-4F90-92A5-9DAE19951408}</ProjectGuid>
+    <ProjectGuid>{5BCCB916-ED81-45B3-9290-B5F02D588711}</ProjectGuid>
     <OutputType>library</OutputType>
-    <RootNamespace>COM</RootNamespace>
-    <AssemblyName>COM</AssemblyName>
+    <RootNamespace>AircraftSymbol</RootNamespace>
+    <AssemblyName>AircraftSymbol</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -79,9 +79,22 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="fonts\RobotoMono-Bold.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="COM.png" />
+    <Resource Include="AircraftSymbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimVars\SimVars.csproj">
+      <Project>{cd7234b5-b50d-421d-af1c-cf4271bd9b52}</Project>
+      <Name>SimVars</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AirspeedGague.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IndicatedSpeed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -127,21 +127,33 @@
     <Folder Include="Images\Background\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AircraftSymbol\AircraftSymbol.csproj">
+      <Project>{5bccb916-ed81-45b3-9290-b5f02d588711}</Project>
+      <Name>AircraftSymbol</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Attitude_Pitch_Roll\Attitude_Pitch_Roll.csproj">
       <Project>{d21cc73a-b4c3-4a95-a14b-f7bab54fe88b}</Project>
       <Name>Attitude_Pitch_Roll</Name>
     </ProjectReference>
-    <ProjectReference Include="..\COM\COM.csproj">
+    <ProjectReference Include="..\COM\NAV.csproj">
       <Project>{74666aae-731d-4f90-92a5-9dae19951408}</Project>
-      <Name>COM</Name>
+      <Name>NAV</Name>
     </ProjectReference>
     <ProjectReference Include="..\MSFS.Connect\MSFS.Connect.csproj">
       <Project>{77bcbb74-fbf2-428f-8f55-caa3e8c3d963}</Project>
       <Name>MSFS.Connect</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RollScale\RollScale.csproj">
+      <Project>{b79908b4-d4c3-435c-9f81-f6cdf8f6bf6f}</Project>
+      <Name>RollScale</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimVars\SimVars.csproj">
       <Project>{cd7234b5-b50d-421d-af1c-cf4271bd9b52}</Project>
       <Name>SimVars</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoftKeys\SoftKeys.csproj">
+      <Project>{c242ae3f-7394-4aea-a26e-38dac9c47535}</Project>
+      <Name>SoftKeys</Name>
     </ProjectReference>
     <ProjectReference Include="..\SplashScreen\SplashScreen.csproj">
       <Project>{3ed4f15f-474d-4e69-b9cc-21fe00215031}</Project>

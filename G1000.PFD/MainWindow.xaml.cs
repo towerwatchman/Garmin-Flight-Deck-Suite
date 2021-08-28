@@ -25,21 +25,16 @@ namespace G1000.PFD
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        //------
-        //Vars for transforms
-        //double lastAttitudePitch = 0;
-        //double lastAttitudeRoll = 0;
-
-        //------
-
         private DispatcherTimer timer = new DispatcherTimer();
 
         public MSFS.Connect.API MSFSapi = new MSFS.Connect.API();
         //Controls
         private SplashScreen.UserControl1 splashScreen = new SplashScreen.UserControl1();
         private Attitude_Pitch_Roll.UserControl1 attitude_pr = new Attitude_Pitch_Roll.UserControl1();
-        private COM.UserControl1 com = new COM.UserControl1();
+        private NAV.UserControl1 nav = new NAV.UserControl1();
+        private SoftKeys.UserControl1 softKeys = new SoftKeys.UserControl1();
+        private AircraftSymbol.UserControl1 aircraftSymbol = new AircraftSymbol.UserControl1();
+        private RollScale.UserControl1 rollScale = new RollScale.UserControl1();
 
         public MainWindow()
         {
@@ -59,7 +54,7 @@ namespace G1000.PFD
             #endregion
 
             //Start Timer to show splashscreen and after a specified amonut of time
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 3000);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timer.Tick += new EventHandler(OnTick);
             timer.Start();
 
@@ -68,42 +63,62 @@ namespace G1000.PFD
 
         private void OnTick(object sender, EventArgs e)
         {
-            /*
-            #region Attitude
-            attitude_pr.RenderTransformOrigin = new Point(0.5, 0.5);
-            RotateTransform rotateTransform = new RotateTransform(SimVars.ID.attitude_roll);
-            attitude_pr.RenderTransform = rotateTransform;
 
-            Canvas.SetTop(attitude_pr, (-860 - (SimVars.ID.attitude_pitch*6.5)));
-         
-            //MoveTo(attitude_pr, SimVars.ID.attitude_pitch);
+            splashScreen.Visibility = Visibility.Hidden;
+            timer.Stop();
 
-
-
-            #endregion   */
+            //Build PFD Screen
+          
 
             /*#region Setup Layout
-           attitude_pr.Width = 3072;
-           attitude_pr.Height = 2304;
-           MainCanvas.Children.Add(attitude_pr);
-           double left = (-1024);
-           Canvas.SetLeft(attitude_pr, left);
+            attitude_pr.Width = 1024;
+            attitude_pr.Height = 768;
+            MainCanvas.Children.Add(attitude_pr);
+            double left = (69.3);
+            Canvas.SetLeft(attitude_pr, left);
+            double top = (0);
+            Canvas.SetTop(attitude_pr, top);
+            attitude_pr.Visibility = Visibility.Visible;
+            #endregion
 
-           double top = (-800);
-           Canvas.SetTop(attitude_pr, top);
-           attitude_pr.Visibility = Visibility.Visible;
-           #endregion
+            #region NAV
+            nav.Width = 1024;
+            nav.Height = 200;
+            MainCanvas.Children.Add(nav);
+            Canvas.SetLeft(nav, 0);
+            Canvas.SetTop(nav, 0);
+            nav.Visibility = Visibility.Visible;
+            #endregion
 
-           #region Setup COM
-           com.Width = 1024;
-           com.Height = 200;
-           MainCanvas.Children.Add(com);
-           Canvas.SetLeft(com, 0);
-           Canvas.SetTop(com, 0);
-           com.Visibility = Visibility.Visible;
-           #endregion
+            #region SoftKeys
+            softKeys.Width = 1024;
+            softKeys.Height = 40;
+            MainCanvas.Children.Add(softKeys);
+            Canvas.SetLeft(softKeys, 0);
+            Canvas.SetTop(softKeys, MainCanvas.Height - 40);
+            softKeys.Visibility = Visibility.Visible;
+            #endregion
 
-           */
+            #region Roll Scale
+            rollScale.Width = 417.86;
+            rollScale.Height = 417.86;
+            MainCanvas.Children.Add(rollScale);
+            Canvas.SetLeft(rollScale, 268);
+            Canvas.SetTop(rollScale, 60);
+            rollScale.Visibility = Visibility.Visible;
+            #endregion
+
+            #region Aircraft Symbol
+            aircraftSymbol.Width = 1024;
+            aircraftSymbol.Height = 768;
+            MainCanvas.Children.Add(aircraftSymbol);
+            Canvas.SetLeft(aircraftSymbol, 0);
+            Canvas.SetTop(aircraftSymbol, 0);
+            nav.Visibility = Visibility.Visible;
+            #endregion
+            */
+            
+
         }
 
         protected HwndSource GetHWinSource()
