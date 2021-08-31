@@ -4,18 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:G1000.PFD"
-        xmlns:AircraftSymbol="clr-namespace:AircraftSymbol;assembly=AircraftSymbol" xmlns:RollScale="clr-namespace:RollScale;assembly=RollScale" xmlns:SoftKeys="clr-namespace:SoftKeys;assembly=SoftKeys" xmlns:NAV="clr-namespace:NAV;assembly=NAV" xmlns:Attitude_Pitch_Roll="clr-namespace:Attitude_Pitch_Roll;assembly=Attitude_Pitch_Roll" x:Class="G1000.PFD.MainWindow"
+        xmlns:Attitude_Pitch_Roll="clr-namespace:Attitude_Pitch_Roll;assembly=Attitude_Pitch_Roll" xmlns:FlightInstruments="clr-namespace:FlightInstruments;assembly=FlightInstruments" x:Class="G1000.PFD.MainWindow"
         mc:Ignorable="d"
         Title="G1000_PFD" ResizeMode="NoResize"  Loaded="Window_Loaded" Background="{x:Null}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
 
     <Grid>
         <Canvas x:Name="MainCanvas" Height="768" Width="1024" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Attitude_Pitch_Roll:UserControl1 HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <AircraftSymbol:UserControl1/>
-            <RollScale:UserControl1 Canvas.Left="268" Canvas.Top="66"/>
-            <SoftKeys:UserControl1 Canvas.Top="728"/>
-            <NAV:UserControl1 Width="1024" Height="61"/>
+            <FlightInstruments:NavBox Width="1024" Height="61"/>
+            <FlightInstruments:AirspeedIndicator Canvas.Left="153" Canvas.Top="110"/>
+            <FlightInstruments:AircraftSymbol Canvas.Top="2"/>
+            <FlightInstruments:RollScale Canvas.Left="268" Canvas.Top="59"/>
         </Canvas>
-        
+
     </Grid>
 </Window>

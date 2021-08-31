@@ -4,19 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1BB5E798-B28F-45BE-960A-6D2881591DE2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>G1000.PFD</RootNamespace>
-    <AssemblyName>G1000.PFD</AssemblyName>
+    <ProjectGuid>{E54E313A-313F-4875-9B38-3F620DC1EEC0}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>FlightInstruments</RootNamespace>
+    <AssemblyName>FlightInstruments</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,11 +22,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,12 +31,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>G1000.PFD.App</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,24 +50,15 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="AircraftSymbol.xaml.cs">
+      <DependentUpon>AircraftSymbol.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="AirspeedIndicator.xaml.cs">
+      <DependentUpon>AirspeedIndicator.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="NavBox.xaml.cs">
+      <DependentUpon>NavBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -87,42 +72,83 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RollScale.xaml.cs">
+      <DependentUpon>RollScale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Softkeys.xaml.cs">
+      <DependentUpon>Softkeys.xaml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Fonts\RobotoMono-Bold.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Resource Include="Images\NAV.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\Background\" />
+    <Page Include="AircraftSymbol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AirspeedIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RollScale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Softkeys.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Attitude_Pitch_Roll\Attitude_Pitch_Roll.csproj">
-      <Project>{d21cc73a-b4c3-4a95-a14b-f7bab54fe88b}</Project>
-      <Name>Attitude_Pitch_Roll</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FlightInstruments\FlightInstruments.csproj">
-      <Project>{e54e313a-313f-4875-9b38-3f620dc1eec0}</Project>
-      <Name>FlightInstruments</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MSFS.Connect\MSFS.Connect.csproj">
-      <Project>{77bcbb74-fbf2-428f-8f55-caa3e8c3d963}</Project>
-      <Name>MSFS.Connect</Name>
+    <Resource Include="Images\AirspeedIndicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TrueAirSpeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IndicatedSpeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BaseImages\Base_Airspeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AirspeedGague.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MSFS.Planes\MSFS.Planes.csproj">
+      <Project>{aa91d48c-ff58-44fa-8ef7-60176635f686}</Project>
+      <Name>MSFS.Planes</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimVars\SimVars.csproj">
       <Project>{cd7234b5-b50d-421d-af1c-cf4271bd9b52}</Project>
       <Name>SimVars</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SplashScreen\SplashScreen.csproj">
-      <Project>{3ed4f15f-474d-4e69-b9cc-21fe00215031}</Project>
-      <Name>SplashScreen</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AircraftSymbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RollScale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Vne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IndicatedSpeedRed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using SharpVectors.Converters;
 
 namespace Attitude_Pitch_Roll
 {

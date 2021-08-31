@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="FlightInstruments.AircraftSymbol"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightInstruments"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="1024" Source="Images/AircraftSymbol.png"/>
+
+    </Grid>
+</UserControl>

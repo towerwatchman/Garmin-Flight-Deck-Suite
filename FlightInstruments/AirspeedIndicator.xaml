@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="FlightInstruments.AirspeedIndicator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightInstruments"
+             mc:Ignorable="d" 
+             d:DesignHeight="358" d:DesignWidth="111">
+    <Grid>
+        <!--<Image HorizontalAlignment="Left" Height="358" VerticalAlignment="Top" Width="111" Source="BaseImages/Base_Airspeed.png" Stretch="UniformToFill"/>-->
+        <Image x:Name="AirSpeedIndicatorImg" HorizontalAlignment="Left" Height="331" VerticalAlignment="Top" Width="111" Source="Images/AirspeedIndicator.png"/>
+        <Image x:Name="TrueAirSpeedImg" HorizontalAlignment="Left" Height="27" Margin="0,331,0,0" VerticalAlignment="Top" Width="111" Source="Images/TrueAirSpeed.png"/>
+        <Canvas HorizontalAlignment="Left" Height="331" Margin="83,0,0,0" VerticalAlignment="Top" Width="28" ClipToBounds="True">            
+            <StackPanel x:Name="VSpeedRef" Height="331" Width="14" Orientation="Vertical" Canvas.Left="14">
+            </StackPanel>
+            <StackPanel x:Name="AirspeedGague" Height="331" Width="28" Orientation="Vertical">
+            </StackPanel>
+            <StackPanel x:Name="VneRef" Height="331" Width="14" Orientation="Vertical" Canvas.Left="14">
+            </StackPanel>
+        </Canvas>
+
+        <Canvas HorizontalAlignment="Left" Height="331" VerticalAlignment="Top" Width="83" ClipToBounds="True">
+            <StackPanel x:Name="AirspeedRange" Height="331" Width="83" Orientation="Vertical">
+            </StackPanel>
+
+        </Canvas>
+        <Image x:Name="IndicatedSpeedImg" Source="/FlightInstruments;component/Images/IndicatedSpeed.png" Margin="0,0,0,27" Width="111"/>
+        <Canvas ClipToBounds="True" Height="45" Width="83" Margin="0,143,28,170">
+            <StackPanel x:Name="AirspeedHundred" Height="45" Width="83" Orientation="Vertical"/>
+
+            <Rectangle Width="27" Height="45" Fill="#FF1F1F1F" Canvas.Left="56"/>
+        </Canvas>
+        <TextBlock x:Name="TrueAirSpeed" TextWrapping="Wrap" Text="TAS ---KT" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="19" HorizontalAlignment="Right" LineHeight="6" Width="111" Height="27" VerticalAlignment="Top" Margin="0,331,0,0" Padding="2,0"/>
+
+    </Grid>
+</UserControl>
