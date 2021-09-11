@@ -5,8 +5,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FlightInstruments"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="768" d:DesignWidth="1024">
     <Grid>
-            
+        <Canvas Width="1024" Height="50" Margin="0,718,0,0">
+            <Image Source="Images/Softkeys.png" Width="1024" Canvas.Top="18" Height="32" VerticalAlignment="Bottom"/>
+            <Label x:Name="SK1" Content="SK1" Canvas.Top="21" Height="29" Width="82" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center"/>
+            <Label x:Name="SK2" Content="SK2" Canvas.Top="21" Height="29" Width="80" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="87"/>
+            <Label x:Name="SK3" Content="SK3" Canvas.Top="21" Height="29" Width="80" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="172"/>
+            <Label x:Name="SK4" Content="SK4" Canvas.Top="21" Height="29" Width="80" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="257"/>
+            <Label x:Name="SK5" Content="SK5" Canvas.Top="21" Height="29" Width="80" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="342"/>
+            <Label x:Name="SK6" Content="SK6" Canvas.Top="21" Height="29" Width="80" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="427"/>
+            <Label x:Name="SK7" Content="SK7" Canvas.Top="21" Height="29" Width="80" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="512"/>
+            <Label x:Name="SK8" Content="SK8" Canvas.Top="21" Height="29" Width="80" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="597"/>
+            <Label x:Name="SK9" Content="SK9" Canvas.Top="21" Height="29" Width="79" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="682"/>
+            <Label x:Name="SK10" Content="SK10" Canvas.Top="21" Height="29" Width="80" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="766"/>
+            <Label x:Name="SK11" Content="SK11" Canvas.Top="21" Height="29" Width="80" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="851"/>
+            <Label x:Name="SK12" Content="SK12" Canvas.Top="21" Height="29" Width="88" HorizontalContentAlignment="Center" FontFamily="fonts/RobotoMono-bold.ttf #Roboto Mono" Foreground="White" FontSize="17" Padding="0" VerticalContentAlignment="Center" Canvas.Left="936"/>
+        </Canvas>
     </Grid>
 </UserControl>

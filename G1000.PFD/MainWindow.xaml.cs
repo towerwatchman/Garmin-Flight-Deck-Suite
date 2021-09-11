@@ -74,5 +74,11 @@ namespace G1000.PFD
             //MSFSapi.SetWindowHandle(GetHWinSource().Handle);
             Init();
         }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
     }
 }

@@ -4,17 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:G1000.PFD"
-        xmlns:Attitude_Pitch_Roll="clr-namespace:Attitude_Pitch_Roll;assembly=Attitude_Pitch_Roll" xmlns:FlightInstruments="clr-namespace:FlightInstruments;assembly=FlightInstruments" x:Class="G1000.PFD.MainWindow"
+        xmlns:FlightInstruments="clr-namespace:FlightInstruments;assembly=FlightInstruments" x:Class="G1000.PFD.MainWindow"
         mc:Ignorable="d"
-        Title="G1000_PFD" ResizeMode="NoResize"  Loaded="Window_Loaded" Background="{x:Null}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+        Title="G1000_PFD"  Loaded="Window_Loaded" Background="{x:Null}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowStyle="None" MouseDown="Window_MouseDown">
 
     <Grid>
-        <Canvas x:Name="MainCanvas" Height="768" Width="1024" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Attitude_Pitch_Roll:UserControl1 HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <FlightInstruments:NavBox Width="1024" Height="61"/>
+        <Canvas x:Name="MainCanvas" Height="768" Width="1024" HorizontalAlignment="Center" VerticalAlignment="Center" ClipToBounds="True">
+            <FlightInstruments:Background_2D Height="768"/>
+            
+            <FlightInstruments:PitchScale Height="768" Width="1024"/>
             <FlightInstruments:AirspeedIndicator Canvas.Left="153" Canvas.Top="110"/>
-            <FlightInstruments:AircraftSymbol Canvas.Top="2"/>
+            <FlightInstruments:AircraftSymbol/>
             <FlightInstruments:RollScale Canvas.Left="268" Canvas.Top="59"/>
+            <FlightInstruments:NavBox Width="1024" Height="61"/>
+            <FlightInstruments:Softkeys/>
+
+
         </Canvas>
 
     </Grid>

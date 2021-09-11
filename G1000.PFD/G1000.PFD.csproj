@@ -28,7 +28,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -103,10 +103,6 @@
     <Folder Include="Images\Background\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Attitude_Pitch_Roll\Attitude_Pitch_Roll.csproj">
-      <Project>{d21cc73a-b4c3-4a95-a14b-f7bab54fe88b}</Project>
-      <Name>Attitude_Pitch_Roll</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FlightInstruments\FlightInstruments.csproj">
       <Project>{e54e313a-313f-4875-9b38-3f620dc1eec0}</Project>
       <Name>FlightInstruments</Name>
