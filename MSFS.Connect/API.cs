@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using System.Windows.Threading;
 using Microsoft.FlightSimulator.SimConnect;
-using System.Runtime.InteropServices;
 
 namespace MSFS.Connect
 {

@@ -49,7 +49,7 @@ namespace G1000.PFD
             #endregion
 
             //Start Timer to show splashscreen and after a specified amonut of time (Currently 3 seconds)
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 2000);
             timer.Tick += new EventHandler(OnTick);
             timer.Start();
 
